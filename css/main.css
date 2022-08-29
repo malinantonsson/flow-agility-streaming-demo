@@ -267,11 +267,13 @@ textarea {
 
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .wrapper {
-  background: url('https://raw.githubusercontent.com/jonsito/AgilityContest/master/agility/livestream/perroenpista.png') no-repeat center center / cover;
+  background: url('/img/perroenpista.png') no-repeat center center / cover;
   height: 100vh;
+  overflow: hidden;
 }
 
 .connected {
@@ -292,4 +294,30 @@ body {
 
 #days, #hours {
   display: none;
+}
+
+.streaming { 
+  display: none;
+}
+
+.cronometro {
+  position: absolute;
+  width: 150px;
+  right: 35px;
+  bottom: 95px;
+  height: 45px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.streaming-data {
+  right: 35px;
+  bottom: 65px;
+  position: absolute;
+}
+
+.data__eliminated {
+  color: red;
 }

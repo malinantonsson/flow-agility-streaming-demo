@@ -27,24 +27,43 @@
 <body>
 
   <div class="wrapper">
+    <div class="intro" id="intro"><h1>FlowAgility streaming demo</h1>
+      <p>To start: </p>
+      <ul>
+        <li>Make sure your browser is set to 1280px x 720px. The layout is hardcoded to these specs.</li>
+        <li>Add your background image to `/img/perroenpista.png`</li>
+        <li>Press the <b>S</b> key to start the video overlay</li>
+        <li>Press the <b>R</b> key to show the results</li>
+        <li>Press the back key or left arrow key to show this screen</li>
+      </ul>
 
-		<!-- declare a tag to attach a chrono object to -->
-<div id="cronometro"></div>
-<span id="minutes"></span>:
-<span id="seconds"></span>:
-<span id="mseconds"></span>
+      <p>Status: <span class="status" id="status">Not connected.</span></p>
+      <div class="error" id="error">
+        Something went wrong!
+      </div>
+      
+      <div class="closed" id="closed">
+        Socket is closed.
+      </div>
+    </div>
 
-  <div class="connected" id="connected">
-    Connected! Size: 1280px x 720px.
-  </div>
+    <div class="streaming" id="streaming">
+          <!-- declare a tag to attach a chrono object to -->
+          <div id="cronometro" class="cronometro">
+            <span id="minutes">00</span>:<span id="seconds">00</span>:<span id="mseconds">000</span>
+          </div>
+          <div id="streaming-data" class="streaming-data">
+            F: <span id="streaming-data__faults">0</span>
+            R: <span id="streaming-data__refusals">0</span>
+            <span id="streaming-data__eliminated" class="streaming-data__eliminated" style="opacity: 0;">Elim.</span>
+          </div>
+    </div>
+
+
+
   
-  <div class="error" id="error">
-    Something went wrong!
-  </div>
-
-  <div class="closed" id="closed">
-    Socket is closed.
-  </div>
+  
+  
 </div>
 
 
