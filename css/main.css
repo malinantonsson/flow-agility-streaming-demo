@@ -314,10 +314,54 @@ body {
 
 .streaming-data {
   right: 35px;
-  bottom: 65px;
+  bottom: 105px;
   position: absolute;
+  width: 140px;
+}
+
+.streaming-data-pos {
+  position: relative;
+}
+
+.streaming-data-pen {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .data__eliminated {
   color: red;
+}
+
+.streaming-run {
+  position: absolute;
+  bottom: 53px;
+  left: 220px;
+  color: white;
+  width: 500px;
+}
+
+.streaming-run__row--large {
+  font-size: 20px;
+  line-height: 2.2em;
+}
+
+.results {
+  background-color: #00FF01;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+.results table {
+  margin: auto;
+}
+
+.results th,
+.results td {
+  padding: 10px;
+}
+
+.results__header {
+  text-align: center;
 }

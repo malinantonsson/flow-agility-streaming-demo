@@ -1,77 +1,203 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <meta name="theme-color" content="#fafafa" />
 
-  <meta name="theme-color" content="#fafafa">
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    ></script>
+  </head>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
+  <body>
+    <div class="wrapper">
+      <div class="intro" id="intro">
+        <h1>FlowAgility streaming demo</h1>
+        <p>To start:</p>
+        <ul>
+          <li>
+            Make sure your browser is set to 1280px x 720px. The layout is
+            hardcoded to these specs.
+          </li>
+          <li>
+            Add your background image to `/img/perroenpista.png` and should be
+            1280px x 720px
+          </li>
+          <li>
+            Press the <b>S</b> key to start the video overlay (or click
+            <a href="/?page=stream">here</a>)
+          </li>
+          <li>
+            Press the <b>R</b> key to show the results - this will show Combined
+            results if available, otherwise Best results
+          </li>
 
-<body>
+          <li>
+            Press the <b>N</b> key at any time to bring in the latest data from
+            the server
+          </li>
 
-  <div class="wrapper">
-    <div class="intro" id="intro"><h1>FlowAgility streaming demo</h1>
-      <p>To start: </p>
-      <ul>
-        <li>Make sure your browser is set to 1280px x 720px. The layout is hardcoded to these specs.</li>
-        <li>Add your background image to `/img/perroenpista.png`</li>
-        <li>Press the <b>S</b> key to start the video overlay</li>
-        <li>Press the <b>R</b> key to show the results</li>
-        <li>Press the back key or left arrow key to show this screen</li>
-      </ul>
+          <li>Press the <b>H</b> key to hide all UI elements</li>
+          <li>Press the back key or left arrow key to show this screen</li>
+        </ul>
 
-      <p>Status: <span class="status" id="status">Not connected.</span></p>
-      <div class="error" id="error">
-        Something went wrong!
+        <p>Status: <span class="status" id="status">Not connected.</span></p>
+        <div class="error" id="error">Something went wrong!</div>
+
+        <div class="closed" id="closed">Socket is closed.</div>
       </div>
-      
-      <div class="closed" id="closed">
-        Socket is closed.
-      </div>
-    </div>
 
-    <div class="streaming" id="streaming">
-          <!-- declare a tag to attach a chrono object to -->
-          <div id="cronometro" class="cronometro">
-            <span id="minutes">00</span>:<span id="seconds">00</span>:<span id="mseconds">000</span>
+      <div class="streaming" id="streaming">
+        <div id="streaming-run">
+          <div class="streaming-run">
+            <div class="streaming-run__row" id="streaming-run-manga"></div>
+            <div class="streaming-run__row streaming-run__row--large">
+              <span
+                class="streaming-run__number"
+                id="streaming-run-start_order"
+              ></span>
+              <span
+                class="streaming-run__dog"
+                id="streaming-run-dog_name"
+              ></span>
+              <span
+                class="streaming-run__handler"
+                id="streaming-run-handler_name"
+              ></span>
+            </div>
+            <div class="streaming-run__row">
+              <span
+                class="streaming-run__club"
+                id="streaming-run-club_name"
+              ></span>
+            </div>
           </div>
+
           <div id="streaming-data" class="streaming-data">
-            F: <span id="streaming-data__faults">0</span>
-            R: <span id="streaming-data__refusals">0</span>
-            <span id="streaming-data__eliminated" class="streaming-data__eliminated" style="opacity: 0;">Elim.</span>
+            <div class="streaming-data-pos">
+              <div id="streaming-run-pen" class="streaming-data-pen">
+                F:
+                <span
+                  class="streaming-data__faults"
+                  id="streaming-run-dog_faults"
+                  >0</span
+                >
+                R:
+                <span
+                  class="streaming-data__refusals"
+                  id="streaming-run-dog_refusals"
+                  >0</span
+                >
+
+                <span
+                  class="streaming-data__time"
+                  id="streaming-run-dog_time"
+                ></span>
+              </div>
+              <span
+                class="streaming-data__eliminated"
+                style="opacity: 0; color: red"
+                id="streaming-run-dog_elim"
+                >Elim.</span
+              >
+            </div>
           </div>
+        </div>
+
+        <div id="streaming-run-result" style="display: none">
+          <div class="streaming-run">
+            <div
+              class="streaming-run__row"
+              id="streaming-run-result-manga"
+            ></div>
+            <div class="streaming-run__row streaming-run__row--large">
+              <span
+                class="streaming-run__number"
+                id="streaming-run-result-start_order"
+              ></span>
+              <span
+                class="streaming-run__dog"
+                id="streaming-run-result-dog_name"
+              ></span>
+              <span
+                class="streaming-run__handler"
+                id="streaming-run-result-handler_name"
+              ></span>
+            </div>
+            <div class="streaming-run__row">
+              <span
+                class="streaming-run__club"
+                id="streaming-run-result-club_name"
+              ></span>
+            </div>
+          </div>
+
+          <div id="streaming-data" class="streaming-data">
+            <div class="streaming-data-pos">
+              <div id="streaming-run-result-pen" class="streaming-data-pen">
+                F:
+                <span
+                  class="streaming-data__faults"
+                  id="streaming-run-result-dog_faults"
+                  >0</span
+                >
+                R:
+                <span
+                  class="streaming-data__refusals"
+                  id="streaming-run-result-dog_refusals"
+                  >0</span
+                >
+                <span
+                  class="streaming-data__time"
+                  id="streaming-run-result-dog_time"
+                ></span>
+              </div>
+              <span
+                class="streaming-data__eliminated"
+                style="opacity: 0; color: red"
+                id="streaming-run-result-dog_elim"
+                >Elim.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="results" id="results">
+        <h2 class="results__header" id="results-header">
+          G1 / M - Best results
+        </h2>
+        <table>
+          <thead>
+            <th></th>
+            <th>Time</th>
+            <th>Penal</th>
+          </thead>
+
+          <tbody id="results-body"></tbody>
+        </table>
+      </div>
     </div>
 
-
-
-  
-  
-  
-</div>
-
-
-
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-</body>
-
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
