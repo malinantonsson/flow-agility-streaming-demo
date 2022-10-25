@@ -1,6 +1,7 @@
 //const WEBSOCKET_URL = "ws:facom-stage.fly.dev/ws/streaming/-HUwjLmF"
 
 const WEBSOCKET_URL = `ws:${window.location.hostname}:3000/ws/`;
+//console.log("WEBSOCKET_URL: ", WEBSOCKET_URL);
 
 const updateRunData = (name, playset, prefix = "streaming-run") => {
   document.querySelector(`#${prefix}-manga`).innerHTML = name;
@@ -97,6 +98,9 @@ const showRunError = (msg) => {
 (function () {
   let params = new URLSearchParams(document.location.search);
   let page = params.get("page");
+  let url = params.get("url");
+  const websocketUrl = url || WEBSOCKET_URL;
+  console.log("CONNECTING TO: ", websocketUrl);
   if (page) {
     if (page === "stream") {
       showStreaming();
@@ -110,7 +114,7 @@ const showRunError = (msg) => {
   let results = {};
 
   // Create WebSocket connection.
-  const socket = new WebSocket(WEBSOCKET_URL);
+  const socket = new WebSocket(websocketUrl);
 
   // STATUSES
   const err = document.getElementById("error");
