@@ -27,10 +27,14 @@ On message from server:
 
 ## Todos
 
-- [] get websocket URL from query string
+- [x] get websocket URL from query string
 - [] build demo page which runs through all 10 jsons
 - [x] build results page
 - [x] build a status page
 - [x] show time on computed
 - [x] hide F/R/Time on elimination
 - [x] show error instead of dog info
+
+## Build
+
+`npm run build` will create a dist folder than can be deployed
