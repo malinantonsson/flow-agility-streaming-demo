@@ -4,7 +4,17 @@
 
 1. clone repo
 2. run `npm install`
-3. run `npm run dev` to start dev server
+3. open `js/main.js` and add the websocket url on line 6
+4. run `npm run dev` to start dev server
+5. open 'http://localhost:1234/' in the browser make sure to set the browser size to 1280px x 720px
+
+## Demo
+
+When you have connected to the websocket from Flowagility you can use the keyboard to change views.
+
+- Press `s` to start the video overlay - this will display data coming from flow
+- Press `r` to display results when they are available. If not available this does nothing
+- Press `h` to hide all UI elements
 
 ## Features
 
@@ -27,13 +37,7 @@ On message from server:
 
 ## Todos
 
-- [x] get websocket URL from query string
 - [] build demo page which runs through all 10 jsons
-- [x] build results page
-- [x] build a status page
-- [x] show time on computed
-- [x] hide F/R/Time on elimination
-- [x] show error instead of dog info
 
 ## Build
 

@@ -1,7 +1,9 @@
 //const WEBSOCKET_URL = "ws:facom-stage.fly.dev/ws/streaming/-HUwjLmF"
 
-const WEBSOCKET_URL = `ws:${window.location.hostname}:3000/ws/`;
-//console.log("WEBSOCKET_URL: ", WEBSOCKET_URL);
+// Get the websocket url from Flow agility and paste it here
+// it should look something like this: "ws:facom-stage.fly.dev/ws/streaming/7nt5UYKh"
+// you may have to add the "ws:" bit
+const WEBSOCKET_URL = "WEBSOCKET_URL_GOES_HERE";
 
 const updateRunData = (name, playset, prefix = "streaming-run") => {
   document.querySelector(`#${prefix}-manga`).innerHTML = name;
@@ -146,6 +148,7 @@ const showRunError = (msg) => {
     // Listen for messages
     socket.addEventListener("message", (event) => {
       console.log("Message from server ", event);
+      if (event.data === "pong") return;
       console.log("data: ", JSON.parse(event.data));
       const data = JSON.parse(event.data);
 
