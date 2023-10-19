@@ -66,13 +66,11 @@
 
       <div class="streaming" id="streaming">
         <!-- UNCOMMENT THIS TO DISPLAY SPONSORS -->
-        <!--- 
-        <div class="streaming-sponsors sponsors">
+        <!-- <div class="streaming-sponsors sponsors">
           <img src="/img/sponsors/sponsor1.png" alt="" />
           <img src="/img/sponsors/sponsor2.png" alt="" />
           <img src="/img/sponsors/sponsor3.png" alt="" />
-        </div>
-        -->
+        </div> -->
 
         <div id="streaming-run">
           <div class="streaming-run">
@@ -102,18 +100,20 @@
           <div id="streaming-data" class="streaming-data">
             <div class="streaming-data-pos">
               <div id="streaming-run-pen" class="streaming-data-pen">
-                F:
-                <span
-                  class="streaming-data__faults"
-                  id="streaming-run-dog_faults"
-                  >0</span
-                >
-                R:
-                <span
-                  class="streaming-data__refusals"
-                  id="streaming-run-dog_refusals"
-                  >0</span
-                >
+                <div>
+                  F
+                  <span
+                    class="streaming-data__faults"
+                    id="streaming-run-dog_faults"
+                    >0</span
+                  >
+                  R
+                  <span
+                    class="streaming-data__refusals"
+                    id="streaming-run-dog_refusals"
+                    >0</span
+                  >
+                </div>
 
                 <span
                   class="streaming-data__time"
@@ -122,7 +122,7 @@
               </div>
               <span
                 class="streaming-data__eliminated"
-                style="opacity: 0; color: red"
+                style="opacity: 0"
                 id="streaming-run-dog_elim"
                 >Elim.</span
               >
@@ -161,18 +161,22 @@
           <div id="streaming-data" class="streaming-data">
             <div class="streaming-data-pos">
               <div id="streaming-run-result-pen" class="streaming-data-pen">
-                F:
-                <span
-                  class="streaming-data__faults"
-                  id="streaming-run-result-dog_faults"
-                  >0</span
-                >
-                R:
-                <span
-                  class="streaming-data__refusals"
-                  id="streaming-run-result-dog_refusals"
-                  >0</span
-                >
+                <div>
+                  <div>
+                    F
+                    <span
+                      class="streaming-data__faults"
+                      id="streaming-run-result-dog_faults"
+                      >0</span
+                    >
+                    R
+                    <span
+                      class="streaming-data__refusals"
+                      id="streaming-run-result-dog_refusals"
+                      >0</span
+                    >
+                  </div>
+                </div>
                 <span
                   class="streaming-data__time"
                   id="streaming-run-result-dog_time"
@@ -180,7 +184,7 @@
               </div>
               <span
                 class="streaming-data__eliminated"
-                style="opacity: 0; color: red"
+                style="opacity: 0"
                 id="streaming-run-result-dog_elim"
                 >Elim.</span
               >
@@ -196,14 +200,21 @@
           <img src="/img/sponsors/sponsor2.png" alt="" />
           <img src="/img/sponsors/sponsor3.png" alt="" />
         </div> -->
-        <h2 class="results__header" id="results-header">
-          G1 / M - Best results
-        </h2>
-        <table>
+
+        <table class="results_table">
           <thead>
-            <th></th>
-            <th>Time</th>
-            <th>Penal</th>
+            <tr>
+              <th colspan="5">
+                <h2 class="results__header" id="results-header"></h2>
+              </th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th>Time</th>
+              <th>Penal</th>
+            </tr>
           </thead>
 
           <tbody id="results-body"></tbody>

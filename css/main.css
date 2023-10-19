@@ -1,3 +1,8 @@
+:root {
+  --main-bg-color: #e26818;
+  --main-copy-color: white;
+}
+
 /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -271,7 +276,8 @@ body {
 }
 
 .wrapper {
-  background: url('/img/perroenpista.png') no-repeat center center / cover;
+  /* background: url('/img/perroenpista.png') no-repeat center center / cover; */
+  background-color: #0BFE02;
   height: 100vh;
   overflow: hidden;
 }
@@ -314,9 +320,13 @@ body {
 
 .streaming-data {
   right: 35px;
-  bottom: 105px;
+  bottom: 100px;
   position: absolute;
-  width: 140px;
+  width: 120px;
+  padding: 5px 10px;
+
+  background-color: var(--main-bg-color);
+  color: var(--main-copy-color);
 }
 
 .streaming-data-pos {
@@ -327,11 +337,21 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
 }
 
-.data__eliminated {
-  color: red;
+.streaming-data__faults,
+.streaming-data__refusals,
+.streaming-data__time,
+.streaming-data__eliminated {
+  font-weight: bold;
 }
+
+/* .data__eliminated {
+  color: red;
+} */
 
 .streaming-run {
   position: absolute;
@@ -339,11 +359,30 @@ body {
   left: 220px;
   color: white;
   width: 500px;
+  min-height: 100px;
 }
 
+.streaming-run::before {
+  content: '';
+  width: 500px;
+  background-color: var(--main-bg-color);
+  opacity: 0.7;
+  position: absolute;
+  display: block;
+  height: 100%;
+
+}
+
+.streaming-run__row {
+  padding: 5px;
+  position: relative;
+  z-index: 1;
+  min-height: 22px;
+}
 .streaming-run__row--large {
   font-size: 20px;
-  line-height: 2.2em;
+  background-color: var(--main-bg-color);
+  min-height: 28px;
 }
 
 .results {
@@ -357,6 +396,16 @@ body {
   margin: auto;
 }
 
+.results_table {
+  color: var(--main-copy-color);
+  border-spacing: 0px 2px;
+}
+
+.results_table tr {
+  background-color: var(--main-bg-color);
+
+}
+
 .results th,
 .results td {
   padding: 0 10px;
@@ -364,6 +413,7 @@ body {
 
 .results__header {
   text-align: center;
+  color: var(--main-copy-color);
 }
 
 .sponsors {
@@ -375,4 +425,8 @@ body {
 
 .sponsors img {
   max-width: 150px;
+}
+
+.results-item-dog {
+  font-weight: bold;
 }

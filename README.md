@@ -25,6 +25,10 @@ Sponsors logos can be displayed in the top right corner. The logos should be max
 
 You can place the images in `/img/sponsors` folder and update the image names/paths accordingly.
 
+## Theming
+
+The build supports two color selection - the main color (used for backgrounds) and copy color. These can be set on line 2 & 3 in [main.css](/css/main.css).
+
 ## Logic
 
 On message from server:
