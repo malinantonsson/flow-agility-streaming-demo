@@ -393,7 +393,7 @@ body {
 }
 
 .results table {
-  margin: auto;
+  margin: 20px auto;
 }
 
 .results_table {
@@ -420,13 +420,19 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin: 10px;
 }
 
-.sponsors img {
+.sponsors img,
+.logo img {
   max-width: 150px;
 }
 
 .results-item-dog {
   font-weight: bold;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }

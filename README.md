@@ -20,6 +20,14 @@ When you have connected to the websocket from Flowagility you can use the keyboa
 
 Sponsors logos can be displayed in the top right corner. The logos should be max 150px wide. For best results make sure all logos have the same dimensions (150x75px is a good size). To display sponsors make sure you uncomment the code in index.html
 
+- [Logo on result view](/DEMO/result/logo-result.png)
+
+You can place the images in `/img/sponsors` folder and update the image names/paths accordingly.
+
+## Arranger logo
+
+A logo can be displayed in the top left corner. The logos should be max 150px wide. To display logo make sure you uncomment the code in index.html
+
 - [Sponsors on result view](/DEMO/result/sponsor-result.png)
 - [Sponsors on run view](/DEMO/run/sponsor-run.png)
 
