@@ -20,7 +20,7 @@ const updateRunData = (name, playset, prefix = "streaming-run") => {
     playset.refusals;
 
   document.querySelector(`#${prefix}-dog_time`).innerHTML = playset.time
-    ? `T:${playset.time}`
+    ? `${playset.time}`
     : "";
 
   if (playset.disqualification === "elim") {
@@ -70,14 +70,20 @@ const showResults = (results = {}) => {
         resultHtml +
         `<tr id="result-template">
               <td>
-                <div>
-                  <span data-id="results-item-order">${index + 1}.</span>
-                  <span data-id="results-item-dog">${r.dog_family_name}</span>
-                </div>
-                <div>
-                  <span data-id="results-item-handler">${r.handler}</span>
-                  <span data-id="results-item-club">${r.club}</span>
-                </div>
+              <span data-id="results-item-order">${index + 1}.</span>
+              </td>
+              <td>
+              <span data-id="results-item-dog" class="results-item-dog">${
+                r.dog_family_name
+              }</span>
+              </td>
+              <td>
+                
+                  
+                  
+                  <span data-id="results-item-handler" class="results-item-handler">${
+                    r.handler
+                  }</span>
               </td>
               <td>${r.time}</td>
               <td>${r.total_penalization}</td>
