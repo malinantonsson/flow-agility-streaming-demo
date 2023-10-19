@@ -16,7 +16,16 @@ When you have connected to the websocket from Flowagility you can use the keyboa
 - Press `r` to display results when they are available. If not available this does nothing
 - Press `h` to hide all UI elements
 
-## Features
+## Sponsors
+
+Sponsors logos can be displayed in the top right corner. The logos should be max 150px wide. For best results make sure all logos have the same dimensions (150x75px is a good size). To display sponsors make sure you uncomment the code in index.html
+
+- [Sponsors on result view](/DEMO/result/sponsor-result.png)
+- [Sponsors on run view](/DEMO/run/sponsor-run.png)
+
+You can place the images in `/img/sponsors` folder and update the image names/paths accordingly.
+
+## Logic
 
 On message from server:
 
