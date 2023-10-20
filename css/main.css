@@ -358,13 +358,13 @@ body {
   bottom: 53px;
   left: 220px;
   color: white;
-  width: 500px;
+  width: 700px;
   min-height: 100px;
 }
 
 .streaming-run::before {
   content: '';
-  width: 500px;
+  width: 700px;
   background-color: var(--main-bg-color);
   opacity: 0.7;
   position: absolute;
@@ -378,9 +378,10 @@ body {
   position: relative;
   z-index: 1;
   min-height: 22px;
+  font-size: 20px;
 }
 .streaming-run__row--large {
-  font-size: 20px;
+  font-size: 25px;
   background-color: var(--main-bg-color);
   min-height: 28px;
 }
@@ -409,6 +410,7 @@ body {
 .results th,
 .results td {
   padding: 0 10px;
+  font-size: 22px;
 }
 
 .results__header {
@@ -419,12 +421,16 @@ body {
 .sponsors {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 10px;
 }
 
-.sponsors img,
 .logo img {
-  max-width: 150px;
+  max-width: 100px;
+}
+
+.sponsors img {
+  max-width: 100px;
 }
 
 .results-item-dog {
