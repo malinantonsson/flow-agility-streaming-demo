@@ -320,11 +320,11 @@ body {
 
 .streaming-data {
   right: 35px;
-  bottom: 100px;
+  bottom: 85px;
   position: absolute;
   width: 120px;
   padding: 5px 10px;
-
+  font-size: 25px;
   background-color: var(--main-bg-color);
   color: var(--main-copy-color);
 }
@@ -378,7 +378,7 @@ body {
   position: relative;
   z-index: 1;
   min-height: 22px;
-  font-size: 20px;
+  font-size: 2px;
 }
 .streaming-run__row--large {
   font-size: 25px;
