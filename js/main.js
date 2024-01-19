@@ -3,14 +3,16 @@
 // Get the websocket url from Flow agility and paste it here
 // it should look something like this: "ws:facom-stage.fly.dev/ws/streaming/7nt5UYKh"
 // you may have to add the "ws:" bit
-const WEBSOCKET_URL = "WEBSOCKET_URL_GOES_HERE";
+const WEBSOCKET_URL = "wss:flowagility.com/ws/streaming/HL8cGNWY";
+
+// https://facom-stage.fly.dev/organizer/events
 
 const updateRunData = (name, playset, prefix = "streaming-run") => {
   document.querySelector(`#${prefix}-manga`).innerHTML = name;
   document.querySelector(`#${prefix}-start_order`).innerHTML =
     playset.start_order;
   document.querySelector(`#${prefix}-dog_name`).innerHTML =
-    playset.dog_family_name;
+    `${playset.dog_family_name}, `;
   document.querySelector(`#${prefix}-handler_name`).innerHTML = playset.handler;
   document.querySelector(`#${prefix}-club_name`).innerHTML = playset.club;
 
