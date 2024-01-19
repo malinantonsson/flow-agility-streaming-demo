@@ -2,7 +2,7 @@
 
 // Get the websocket url from Flow agility and paste it here
 // it should look something like this: "ws:facom-stage.fly.dev/ws/streaming/7nt5UYKh"
-// you may have to add the "ws:" bit
+// you may have to add the "wss:" bit
 const WEBSOCKET_URL = "WEBSOCKET_URL_GOES_HERE";
 
 const updateRunData = (name, playset, prefix = "streaming-run") => {
@@ -250,9 +250,9 @@ const showRunError = (msg) => {
       showIntro();
     }
 
-    if (evt.key === "n" || evt.key === "N") {
-      socket.send("streaming_data");
-    }
+    // if (evt.key === "n" || evt.key === "N") {
+    //   socket.send("streaming_data");
+    // }
 
     if (evt.key === "h" || evt.key === "H") {
       hideEverything();
