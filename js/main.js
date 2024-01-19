@@ -9,8 +9,9 @@ const updateRunData = (name, playset, prefix = "streaming-run") => {
   document.querySelector(`#${prefix}-manga`).innerHTML = name;
   document.querySelector(`#${prefix}-start_order`).innerHTML =
     playset.start_order;
-  document.querySelector(`#${prefix}-dog_name`).innerHTML =
-    playset.dog_family_name;
+  document.querySelector(
+    `#${prefix}-dog_name`
+  ).innerHTML = `${playset.dog_family_name}, `;
   document.querySelector(`#${prefix}-handler_name`).innerHTML = playset.handler;
   document.querySelector(`#${prefix}-club_name`).innerHTML = playset.club;
 
