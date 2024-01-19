@@ -322,7 +322,7 @@ body {
   right: 35px;
   bottom: 85px;
   position: absolute;
-  width: 120px;
+  width: 160px;
   padding: 5px 10px;
   font-size: 25px;
   background-color: var(--main-bg-color);
@@ -339,7 +339,7 @@ body {
   left: 0;
   display: flex;
   justify-content: space-between;
-  width: 120px;
+  width: 160px;
 }
 
 .streaming-data__faults,
