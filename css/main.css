@@ -426,12 +426,39 @@ body {
 }
 
 .logo img {
-  max-width: 100px;
+  max-width: 110px;
+  padding: 2px;
+  background-color: white;
+  border-radius: 5%;
+  box-shadow: 3px 2px 2px black;
+  
 }
 
+
+
 .sponsors img {
-  max-width: 100px;
+  /* max-width: 100px; */
+  background-color: white;
 }
+
+.main-sponsor {
+  max-width: 100%;
+  height: 60px;
+  padding: 5px;
+  border-radius: 5%;
+  box-shadow: 2px 1px 1px black;
+}
+
+.small-sponsor {
+  /* max-width: 100%; */
+  width:auto;
+  height: 38px;
+  padding: 4px;
+  border-radius: 5%;
+  box-shadow: 2px 1px 1px black;
+}
+
+
 
 .results-item-dog {
   font-weight: bold;

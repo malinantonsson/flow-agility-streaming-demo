@@ -3,7 +3,11 @@
 // Get the websocket url from Flow agility and paste it here
 // it should look something like this: "ws:facom-stage.fly.dev/ws/streaming/7nt5UYKh"
 // you may have to add the "ws:" bit
-const WEBSOCKET_URL = "wss:flowagility.com/ws/streaming/HL8cGNWY";
+
+// flowagility.com/ws/streaming/5oY8jlhm
+
+const WEBSOCKET_URL = "wss:flowagility.com/ws/streaming/HYJefwmr";
+// flowagility.com/ws/streaming/HYJefwmr
 
 // https://facom-stage.fly.dev/organizer/events
 
